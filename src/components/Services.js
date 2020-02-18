@@ -19,19 +19,19 @@ export default class Services extends Component {
         icon: <FaHiking />,
         title: "Endless hiking",
         info:
-          "Treat yourself to drinks on the beach. Sip Mai Tai's under the sun. Relax and enjoy the waves!"
+          "Go for a hike at the Manoa Falls. Or hike out the one of the hidden trails to the secret cove."
       },
       {
         icon: <FaShuttleVan />,
         title: "Free shuttle",
         info:
-          "Treat yourself to drinks on the beach. Sip Mai Tai's under the sun. Relax and enjoy the waves!"
+          "Head up to the North Shore with our free shuttle service. Or take the shuttle to Waikiki!"
       },
       {
         icon: <IoIosBeer />,
         title: "Tasty beer",
         info:
-          "Treat yourself to drinks on the beach. Sip Mai Tai's under the sun. Relax and enjoy the waves!"
+          "With over 150 beers on tap, we are sure to find you the perfect flavor!"
       }
     ]
   };
