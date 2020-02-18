@@ -25,7 +25,7 @@ class RoomProvider extends Component {
     this.setState({
       rooms,
       featuredRooms,
-      sortedRooms: rooms,
+      // sortedRooms: rooms,
       loading: false
     });
   }
@@ -58,7 +58,17 @@ class RoomProvider extends Component {
   }
 }
 
-// Consumer
 const RoomConsumer = RoomContext.Consumer;
+
+// Higher Order Function
+export function withRoomConsumer(Component) {
+  return function ConsumerWrapper(props) {
+    return (
+      <RoomConsumer>
+        {value => <Component {...props} context={value} />}
+      </RoomConsumer>
+    );
+  };
+}
 
 export { RoomProvider, RoomConsumer, RoomContext };
