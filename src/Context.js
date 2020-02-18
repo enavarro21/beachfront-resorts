@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import items from "./data";
+import Client from "./Contentful";
+Client.getEntries({
+  content_type: "beachResortRoom"
+}).then(response => console.log(response.items));
 
 // Create Provider
 const RoomContext = React.createContext();
@@ -24,27 +28,38 @@ class RoomProvider extends Component {
     pets: false
   };
 
-  // getData function
-  // TODO: create function
+  // Function to get all data from Database
+  getData = async () => {
+    try {
+      let response = await Client.getEntries({
+        content_type: "beachResortRoom",
+        // order: "sys.createdAt"
+        // order: "fields.price"
+        order: "-fields.price"
+      });
+      let rooms = this.formatData(response.items);
+      let featuredRooms = rooms.filter(room => room.featured === true);
+
+      // Set max values for the selections of the room filters
+      let maxPrice = Math.max(...rooms.map(item => item.price));
+      let maxSize = Math.max(...rooms.map(item => item.size));
+
+      this.setState({
+        rooms,
+        featuredRooms,
+        sortedRooms: rooms,
+        loading: false,
+        price: maxPrice,
+        maxPrice,
+        maxSize
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   componentDidMount() {
-    // this.getData
-    let rooms = this.formatData(items);
-    let featuredRooms = rooms.filter(room => room.featured === true);
-
-    // Set max values for the selections of the room filters
-    let maxPrice = Math.max(...rooms.map(item => item.price));
-    let maxSize = Math.max(...rooms.map(item => item.size));
-
-    this.setState({
-      rooms,
-      featuredRooms,
-      sortedRooms: rooms,
-      loading: false,
-      price: maxPrice,
-      maxPrice,
-      maxSize
-    });
+    this.getData();
   }
 
   // Format data from the database
