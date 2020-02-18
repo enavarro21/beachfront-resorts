@@ -19,13 +19,13 @@ export default class Services extends Component {
         icon: <FaHiking />,
         title: "Endless hiking",
         info:
-          "Go for a hike at the Manoa Falls. Or hike out the one of the hidden trails to the secret cove."
+          "Go for a hike to one of many waterfalls nearby. You can even hike out to dolphin cove."
       },
       {
         icon: <FaShuttleVan />,
         title: "Free shuttle",
         info:
-          "Head up to the North Shore with our free shuttle service. Or take the shuttle to Waikiki!"
+          "Head up to the North Shore with our free shuttle service. You can even take the shuttle down to Waikiki beach!"
       },
       {
         icon: <IoIosBeer />,

@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 :root {
-  --primaryColor: #af9a7d;
+  --primaryColor: #4592af;
   --mainWhite: #fff;
   --offWhite: #f7f7f7;
   --mainBlack: #222;
@@ -185,6 +185,7 @@ h6 {
 .banner div {
   width: 10rem;
   height: 5px;
+  border-radius: 15px 30px;
   background: var(--primaryColor);
   margin: 1.7rem auto;
 }

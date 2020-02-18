@@ -35,7 +35,7 @@ class RoomProvider extends Component {
         content_type: "beachResortRoom",
         // order: "sys.createdAt"
         // order: "fields.price"
-        order: "-fields.price"
+        order: "fields.price"
       });
       let rooms = this.formatData(response.items);
       let featuredRooms = rooms.filter(room => room.featured === true);
