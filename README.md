@@ -1,10 +1,14 @@
 # Beachfront Resort Website
 
-## Able explore the different styles of rooms at this luxurious beachfront resort located just a few feet away from the relaxing beaches of Honolulu. Your vacation is waiting.
+## Project for a beachfront resort website. 
+# Features include the following:
+# A featured rooms section on the homepage that changes based on which rooms are marked as featured.
+# A rooms page that allows the user to filter through all available rooms based on room type, number of guests, room price, room size, breakfast allowed, and pets allowed
+# Rooms page dynamically updates based on the selected criteria
+# Custom designed 404 error page
+# Responsively designed for mobile, tablet, laptop, and widescreen views
 
 ### Built using ReactJS
 
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
